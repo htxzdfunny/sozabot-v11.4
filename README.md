@@ -1,6 +1,6 @@
 <div align="center">
     <hr>
-    <img src="https://raw.githubusercontent.com/SozaBot/sozabot-v11.4/main/assets/img/banner.png" height="200" alt="sozabot"> 
+    <img src="https://raw.githubusercontent.com/SozaBot/sozabot-v11.4/main/assets/banner.png" height="200" alt="sozabot"> 
     <h1>sozabot-v11.4</h1>
     <b>高度不可用的小泽Bot开源版</b>
 
