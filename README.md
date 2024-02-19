@@ -20,7 +20,7 @@
 ---
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/SozaBot/sozabot-v11.4/8c0f84f08b2cc444de6597ab64ecbc4b1ba283d0/assets/bash_main.svg">
+    <img src="assets/bash.svg">
 </div>
 
 ---
