@@ -19,33 +19,58 @@
 
 ---
 
-<div align="center">
-    <img src="assets/bash.svg">
-</div>
-
----
-
 <!-- markdownlint-enable -->
 
 # 介绍
 
-介系嘛？哦原来是最不新最不热的`小泽Bot V11.4`版本。开源，QQ支持，高度不可用，暂没想好怎么写。
+~~介系嘛？哦原来是最不新最不热的`小泽Bot V11.4`版本。开源，QQ支持，高度不可用，暂没想好怎么写。~~
+
+为下一代QQ开发支持而构建的综合机器人。
 
 ## 特点
 
-- 根本完全不可用。
-- 没有想好使用什么语言写。
-- 完全不自主研发。
-- 狠狠践踏开源许可。
-- 复制黏贴大法。
+- ~~根本完全不可用。~~
+- ~~没有想好使用什么语言写。~~
+- ~~完全不自主研发。~~
+- ~~狠狠践踏开源许可。~~
+- ~~复制黏贴大法。~~
 
 ## 使用
 
+### 通过dev的路径
+
+> ⚠️ 开发尚未完成，切勿使用该部署。
+
+构建nonebot2
+
+```bash
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+pipx install nb-cli
+nb create
+```
+
+获取仓库
+
 ```bash
 git clone https://github.com/SozaBot/sozabot-v11.4
-pip3 install -r requirements.txt
-rm -rf sozabot-v11.4
 ```
+
+复制插件目录
+
+``` bash
+cp -r -n sozabot-v11.4/src/ sozabot/
+```
+
+运行
+
+```bash
+nb run
+```
+
+### 通过商店
+
+目前尚未发布。
 
 ## 贡献
 
@@ -67,3 +92,5 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # 感谢
 
 感谢某猫被迫允许我注册的版本号。
+
+## 使用的开源项目
