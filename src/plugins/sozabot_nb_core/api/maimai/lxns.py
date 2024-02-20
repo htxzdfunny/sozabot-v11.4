@@ -31,7 +31,7 @@ class MaiApiLxns:
     :return: 玩家信息
     """
 
-    def get_player_info(self, friend_code):
+    async def get_player_info(self, friend_code):
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}"
         response = requests.get(url, headers=self.HEADERS)
         if response.status_code == 200:
@@ -46,7 +46,7 @@ class MaiApiLxns:
     :return: 玩家 Best 50
     """
 
-    def get_player_bests(self, friend_code):
+    async def get_player_bests(self, friend_code):
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}/bests"
         response = requests.get(url, headers=self.HEADERS)
         if response.status_code == 200:
@@ -62,7 +62,7 @@ class MaiApiLxns:
     :return: 成功返回 True，失败返回 False
     """
 
-    def upload_player_scores(self, friend_code, scores):
+    async def upload_player_scores(self, friend_code, scores):
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}/scores"
         data = {"scores": scores}
         response = requests.post(url, headers=self.HEADERS, json=data)
@@ -77,7 +77,7 @@ class MaiApiLxns:
     :return: 玩家 Recent 50
     """
 
-    def get_player_recents(self, friend_code):
+    async def get_player_recents(self, friend_code):
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}/recents"
         response = requests.get(url, headers=self.HEADERS)
         if response.status_code == 200:
@@ -93,7 +93,7 @@ class MaiApiLxns:
     :return: 玩家姓名框进度
     """
 
-    def get_player_plate_progress(self, friend_code, plate_id):
+    async def get_player_plate_progress(self, friend_code, plate_id):
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}/plate/{plate_id}"
         response = requests.get(url, headers=self.HEADERS)
         if response.status_code == 200:
@@ -102,7 +102,7 @@ class MaiApiLxns:
         else:
             raise RuntimeError(f"请求失败：{response.status_code}")
 
-    def get_song_list(self):
+    async def get_song_list(self):
         url = f"{self.API_URL}/v0/maimai/song/list"
         response = requests.get(url, headers=self.HEADERS)
         if response.status_code == 200:
@@ -150,10 +150,10 @@ class MaiApiLxns:
 
 # # 获取曲目列表
 # todo: 记得测试完把这里删了
-if __name__ == "__main__":
-    MaiApiLxns = MaiApiLxns("")  # API Token
-    result = MaiApiLxns.get_song_list()
-    print(result)
+# if __name__ == "__main__":
+#     MaiApiLxns = MaiApiLxns("")  # API Token
+#     result = MaiApiLxns.get_song_list()
+#     print(result)
 
 
 # endregion
