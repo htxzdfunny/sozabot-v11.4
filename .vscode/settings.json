@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": [
+        "./src/plugins",
+        "./src/plugins/sozabot_nb_core/api",
+        "./src/plugins/sozabot_nb_core/api/maimai"
+    ]
+}
