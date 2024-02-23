@@ -102,6 +102,7 @@ class MaiApiLxns:
         else:
             raise RuntimeError(f"请求失败：{response.status_code}")
 
+    # 获取歌曲列表
     async def get_song_list(self):
         url = f"{self.API_URL}/v0/maimai/song/list"
         response = requests.get(url, headers=self.HEADERS)
