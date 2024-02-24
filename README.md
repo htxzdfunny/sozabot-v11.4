@@ -92,5 +92,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # 感谢
 
 感谢某猫被迫允许我注册的版本号。
+感谢每一个提供开源&外部项目的开发者。
+感谢每一个开发&使用本项目的你。
 
-## 使用的开源项目
+## 使用的开源&外部项目
+
+- [LXNS Maimai API](https://maimai.lxns.net/)
