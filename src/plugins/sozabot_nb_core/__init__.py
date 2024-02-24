@@ -19,8 +19,10 @@ plugin_config = get_plugin_config(Config)
 
 # region 指令
 # maimai指令
-mai_get_player_info = on_command("", priority=5)
+mai_get_player_info = on_command("mai", priority=5)
 mai_get_song_list = on_command("", priority=5)
+
+
 # endregion
 
 # region 指令处理

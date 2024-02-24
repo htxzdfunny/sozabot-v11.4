@@ -15,7 +15,7 @@ class MaiApiLxns:
 
     # 请求头
     # todo: 记得删除token，并改为从外部的config传入
-    HEADERS = {"Authorization": _token}
+    headers = {}
 
     # 初始化
     """
@@ -24,6 +24,14 @@ class MaiApiLxns:
 
     def __init__(self, token):
         self._token = token
+        self.update_headers()
+
+    # 更新请求头
+    def update_headers(self):
+        self.headers = {
+            "User-Agent": "Mozilla/5.0 (compatible; MyClientApp/1.0)",
+            "Authorization": self._token,
+        }
 
     # 获取玩家信息
     """
@@ -33,7 +41,7 @@ class MaiApiLxns:
 
     async def get_player_info(self, friend_code):
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}"
-        response = requests.get(url, headers=self.HEADERS)
+        response = requests.get(url, headers=self.headers)
         if response.status_code == 200:
             data = json.loads(response.content)
             return data
@@ -47,8 +55,9 @@ class MaiApiLxns:
     """
 
     async def get_player_bests(self, friend_code):
+
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}/bests"
-        response = requests.get(url, headers=self.HEADERS)
+        response = requests.get(url, headers=self.headers)
         if response.status_code == 200:
             data = json.loads(response.content)
             return data["data"]
@@ -65,7 +74,7 @@ class MaiApiLxns:
     async def upload_player_scores(self, friend_code, scores):
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}/scores"
         data = {"scores": scores}
-        response = requests.post(url, headers=self.HEADERS, json=data)
+        response = requests.post(url, headers=self.headers, json=data)
         if response.status_code == 200:
             return True
         else:
@@ -79,7 +88,7 @@ class MaiApiLxns:
 
     async def get_player_recents(self, friend_code):
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}/recents"
-        response = requests.get(url, headers=self.HEADERS)
+        response = requests.get(url, headers=self.headers)
         if response.status_code == 200:
             data = json.loads(response.content)
             return data
@@ -95,7 +104,7 @@ class MaiApiLxns:
 
     async def get_player_plate_progress(self, friend_code, plate_id):
         url = f"{self.API_URL}/v0/maimai/player/{friend_code}/plate/{plate_id}"
-        response = requests.get(url, headers=self.HEADERS)
+        response = requests.get(url, headers=self.headers)
         if response.status_code == 200:
             data = json.loads(response.content)
             return data
@@ -105,7 +114,7 @@ class MaiApiLxns:
     # 获取歌曲列表
     async def get_song_list(self):
         url = f"{self.API_URL}/v0/maimai/song/list"
-        response = requests.get(url, headers=self.HEADERS)
+        response = requests.get(url, headers=self.headers)
         if response.status_code == 200:
             data = json.loads(response.content)
             return data
@@ -153,7 +162,7 @@ class MaiApiLxns:
 # todo: 记得测试完把这里删了
 # if __name__ == "__main__":
 #     MaiApiLxns = MaiApiLxns("")  # API Token
-#     result = MaiApiLxns.get_song_list()
+#     result = MaiApiLxns.get_player_info("")
 #     print(result)
 
 
