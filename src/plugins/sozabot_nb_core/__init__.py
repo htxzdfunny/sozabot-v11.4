@@ -15,6 +15,8 @@ __plugin_meta__ = PluginMetadata(
     config=Config,
 )
 
+from .handler.maimai_handler import MaiHandler
+
 plugin_config = get_plugin_config(Config)
 
 # region 指令
@@ -29,12 +31,14 @@ mai_get_song_list = on_command("", priority=5)
 # 获取mai玩家信息
 @mai_get_player_info.handle()
 async def handle_mai_get_player_info(args: Message = CommandArg()):
-    mai = MaiApiLxns(plugin_config.sozabot_mai_lxns_api_token)
-    reply = await mai.get_player_info(args.extract_plain_text())
+    # todo: 去除直接调用子方法，而应该让handler处理
+    mai = MaiHandler("", plugin_config.sozabot_mai_lxns_api_token)
+    reply = await mai.get_player_info_lxns(args.extract_plain_text())
     await mai_get_player_info.finish(reply)
 
 
 # 获取mai歌曲列表
+# todo:修改到handler，而不是直接调用api
 @mai_get_song_list.handle()
 async def handle_mai_get_song_list():
     mai = MaiApiLxns(plugin_config.sozabot_mai_lxns_api_token)

@@ -14,7 +14,6 @@ class MaiApiLxns:
     _token = ""
 
     # 请求头
-    # todo: 记得删除token，并改为从外部的config传入
     headers = {}
 
     # 初始化
@@ -60,7 +59,7 @@ class MaiApiLxns:
         response = requests.get(url, headers=self.headers)
         if response.status_code == 200:
             data = json.loads(response.content)
-            return data["data"]
+            return data
         else:
             raise RuntimeError(f"请求失败：{response.status_code}")
 
@@ -159,7 +158,6 @@ class MaiApiLxns:
 # print(plate_progress)
 
 # # 获取曲目列表
-# todo: 记得测试完把这里删了
 # if __name__ == "__main__":
 #     MaiApiLxns = MaiApiLxns("")  # API Token
 #     result = MaiApiLxns.get_player_info("")
