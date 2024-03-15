@@ -31,7 +31,6 @@ mai_get_song_list = on_command("", priority=5)
 # 获取mai玩家信息
 @mai_get_player_info.handle()
 async def handle_mai_get_player_info(args: Message = CommandArg()):
-    # todo: 去除直接调用子方法，而应该让handler处理
     mai = MaiHandler("", plugin_config.sozabot_mai_lxns_api_token)
     reply = await mai.get_player_info_lxns(args.extract_plain_text())
     await mai_get_player_info.finish(reply)
