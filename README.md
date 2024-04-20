@@ -2,7 +2,7 @@
 <div align="center">
     <hr>
     <img src="https://raw.githubusercontent.com/SozaBot/sozabot-v11.4/main/assets/banner.png" height="200" alt="sozabot">
-    <h1>sozabot-v11.4</h1>
+    <h1>sozabot-v11.45</h1>
     <b>高度不可用的小泽Bot开源版</b>
 
 </div>
@@ -23,7 +23,7 @@
 
 # 介绍
 
-~~介系嘛？哦原来是最不新最不热的`小泽Bot V11.4`版本。开源，QQ支持，高度不可用，暂没想好怎么写。~~
+~~介系嘛？哦原来是最不新最不热的`小泽Bot V11.45`版本。开源，QQ支持，高度不可用，暂没想好怎么写。~~
 
 为下一代QQ开发支持而构建的综合机器人。
 
@@ -91,7 +91,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # 感谢
 
-感谢某猫被迫允许我注册的版本号。
+~~感谢某猫被迫允许我注册的版本号。~~
+现在已经被抢回去了。
 感谢每一个提供开源&外部项目的开发者。
 感谢每一个开发&使用本项目的你。
 
